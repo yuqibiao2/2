@@ -114,26 +114,18 @@
 <script>
 
     var id = getUrlParam("i");
-    var productCompany = getUrlParam("c");
-    console.log("productCompany=="+productCompany);
-    var pre = "8101";
-    if (productCompany=="1"){
-        pre="8101";
+    var pre = id.substring(0,4);
+    if (pre=="8101"){
         $("#product-company").text("云龙气站");
-    }else if (productCompany=="2"){
-        pre="8102";
+    }else if (pre=="8102"){
         $("#product-company").text("民旺气站");
-    }else if (productCompany=="3"){
-        pre="8103";
+    }else if (pre=="8103"){
         $("#product-company").text("桂林洋气站");
-    }else if(productCompany=="4"){
-        pre="8105";
+    }else if(pre=="8105"){
         $("#product-company").text("新埠岛气站");
-    }else if(productCompany=="5"){
-        pre="8106";
+    }else if(pre=="8106"){
         $("#product-company").text("永兴气站");
-    }else if(productCompany=="6"){
-        pre="8108";
+    }else if(pre=="8108"){
         $("#product-company").text("详昌源气站");
     }
     $("#gas-jar-id").text(id);
