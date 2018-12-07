@@ -38,9 +38,9 @@
             </div>
         </div>
         <ul class="list">
-            <li>产权单位：<b id="product-company">武汉液化气有限公司</b></li>
+            <li>产权单位：<b id="product-company"></b></li>
             <li>生产厂家：<b id="product-man"></b></li>
-            <li>钢瓶规格：<b id="gas-jar-specification">15公斤</b></li>
+            <li>钢瓶规格：<b id="gas-jar-specification">18公斤</b></li>
             <li>生成日期：<b id="product-date">2018-08</b></li>
             <li>下次检验：<b id="product-next-checked">2019-01</b></li>
         </ul>
@@ -50,7 +50,7 @@
         <ul class="list">
             <li>充装单位：<b id="fill-company">云龙气站</b></li>
             <li>充装时间：<b id="fill-date">2018-12-01</b></li>
-            <li>瓶气总重：<b id="total-weight">10.5公斤</b></li>
+            <li>瓶气总重：<b id="total-weight">10.5</b></li>
         </ul>
     </div>
     <!--<div class="bottom">
@@ -113,16 +113,16 @@
 <script src="钢瓶档案_files/doT.min.js" type="text/javascript"></script>
 <script>
 
-    var gasJarId = getUrlParam("gasJarId");
+    var gasJarId = getUrlParam("i");
     $("#gas-jar-id").text(gasJarId);
-    var gasJarCode = getUrlParam("gasJarCode");
-    $("#gas-jar-code").text(gasJarCode);
-    var productCompany = getUrlParam("productCompany");
-    console.log("productCompany："+productCompany)
+    var gasJarCode = getUrlParam("d");
+    $("#gas-jar-code").text("FK-"+gasJarId);
+    //var productCompany = getUrlParam("c");
+/*    console.log("productCompany："+productCompany)
     $("#product-company").text(productCompany);
     var productMan = getUrlParam("productMan");
     $("#product-man").text(productMan);
-    var gasJarSpecification = getUrlParam("gasJarSpecification");
+    var gasJarSpecification = getUrlParam("gasJarSpecification")+"公斤";
     $("#gas-jar-specification").text(gasJarSpecification);
     var productDate = getUrlParam("productDate");
     $("#product-date").text(productDate);
@@ -130,9 +130,9 @@
     $("#product-next-checked").text(productNextChecked);
     var fillCompany = getUrlParam("fillCompany");
     $("#fill-company").text(fillCompany);
-    var fillDate =  getUrlParam("fillDate");
-    $("#fill-date").text(fillDate);
-    var totalWeight = getUrlParam("totalWeight");
+    var fillDate =  productCompany;//getUrlParam("fillDate");
+    $("#fill-date").text(fillDate);*/
+    var totalWeight = getUrlParam("w"+"公斤");
     $("#total-weight").text(totalWeight);
 
     function getUrlParam(name) {
