@@ -115,25 +115,23 @@
 
     var gasJarId = getUrlParam("i");
     $("#gas-jar-id").text(gasJarId);
-    var gasJarCode = getUrlParam("d");
     $("#gas-jar-code").text("FK-"+gasJarId);
-    //var productCompany = getUrlParam("c");
-/*    console.log("productCompany："+productCompany)
+    var productCompany = getUrlParam("c");
     $("#product-company").text(productCompany);
-    var productMan = getUrlParam("productMan");
+/*    var productMan = getUrlParam("productMan");
     $("#product-man").text(productMan);
     var gasJarSpecification = getUrlParam("gasJarSpecification")+"公斤";
     $("#gas-jar-specification").text(gasJarSpecification);
     var productDate = getUrlParam("productDate");
     $("#product-date").text(productDate);
     var productNextChecked = getUrlParam("productNextChecked");
-    $("#product-next-checked").text(productNextChecked);
+    $("#product-next-checked").text(productNextChecked);*/
     var fillCompany = getUrlParam("fillCompany");
-    $("#fill-company").text(fillCompany);
-    var fillDate =  productCompany;//getUrlParam("fillDate");
-    $("#fill-date").text(fillDate);*/
+    $("#fill-company").text(productCompany);
     var totalWeight = getUrlParam("w"+"公斤");
-    $("#total-weight").text(totalWeight);
+    if (totalWeight!=undefined && totalWeight!=null){
+        $("#total-weight").text(totalWeight);
+    }
 
     function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
