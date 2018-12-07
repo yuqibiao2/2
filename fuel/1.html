@@ -2,7 +2,7 @@
 <!-- saved from url=(0066)https://lpg.msbapp.cn/msht/lpgBottle/getBottleDetail?id=8880014389 -->
 <html data-dpr="1" style="font-size: 64px;">
 <head>
-    <<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta content="telephone=no,email=no,date=no,address=no" name="format-detection">
     <title>钢瓶档案</title>
@@ -118,17 +118,9 @@
     $("#gas-jar-code").text("FK-"+gasJarId);
     var productCompany = getUrlParam("c");
     $("#product-company").text(productCompany);
-/*    var productMan = getUrlParam("productMan");
-    $("#product-man").text(productMan);
-    var gasJarSpecification = getUrlParam("gasJarSpecification")+"公斤";
-    $("#gas-jar-specification").text(gasJarSpecification);
-    var productDate = getUrlParam("productDate");
-    $("#product-date").text(productDate);
-    var productNextChecked = getUrlParam("productNextChecked");
-    $("#product-next-checked").text(productNextChecked);*/
     var fillCompany = getUrlParam("fillCompany");
     $("#fill-company").text(productCompany);
-    var totalWeight = getUrlParam("w"+"公斤");
+    var totalWeight = getUrlParam("w")+"公斤";
     if (totalWeight!=undefined && totalWeight!=null){
         $("#total-weight").text(totalWeight);
     }
