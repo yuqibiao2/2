@@ -2,7 +2,7 @@
 <!-- saved from url=(0066)https://lpg.msbapp.cn/msht/lpgBottle/getBottleDetail?id=8880014389 -->
 <html data-dpr="1" style="font-size: 64px;">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta content="telephone=no,email=no,date=no,address=no" name="format-detection">
     <title>钢瓶档案</title>
@@ -33,28 +33,28 @@
         <div class="title">钢瓶档案</div>
         <div class="info"><img src="钢瓶档案_files/pic1.jpg" alt="">
             <div class="r">
-                <div class="line">钢瓶编号：<b>8880014390</b><span class="status">合格</span></div>
-                <div class="line">瓶身钢码：<b>FK20181127002</b></div>
+                <div class="line">钢瓶编号：<b id="gas-jar-id">8101000001</b><span class="status">合格</span></div>
+                <div class="line">瓶身钢码：<b id="gas-jar-code">FK20181127002</b></div>
             </div>
         </div>
         <ul class="list">
-            <li>产权单位：<b>武汉液化气有限公司</b></li>
-            <li>生产厂家：<b>武汉民泰钢瓶厂</b></li>
-            <li>钢瓶规格：<b>15公斤</b></li>
-            <li>生成日期：<b>2018-08</b></li>
-            <li>下次检验：<b>2019-01</b></li>
+            <li>产权单位：<b id="product-company">武汉液化气有限公司</b></li>
+            <li>生产厂家：<b id="product-man"></b></li>
+            <li>钢瓶规格：<b id="gas-jar-specification">15公斤</b></li>
+            <li>生成日期：<b id="product-date">2018-08</b></li>
+            <li>下次检验：<b id="product-next-checked">2019-01</b></li>
         </ul>
     </div>
     <div class="mid">
         <div class="title">充装信息</div>
         <ul class="list">
-            <li>充装单位：<b>深圳燃气</b></li>
-            <li>充装时间：<b>2018-09-25</b></li>
-            <li>瓶气总重：<b>10.5公斤</b></li>
+            <li>充装单位：<b id="fill-company">云龙气站</b></li>
+            <li>充装时间：<b id="fill-date">2018-12-01</b></li>
+            <li>瓶气总重：<b id="total-weight">10.5公斤</b></li>
         </ul>
     </div>
     <!--<div class="bottom">
-        <div class="title">气瓶流转轨迹</div>
+        <div class="title">  </div>
         <ul></ul>
     </div>
     <div class="ewm">
@@ -63,7 +63,7 @@
         <div class="box"><img src="./钢瓶档案_files/wxewm.jpg" alt="">
             <p>微信扫码关注民生宝</p></div>
     </div>-->
-    <div class="contact"><span style="font-size: 12px;">服务热线：<a href="tel:963666">963666</a>、<a href="tel:963517">963517</a></span></div>
+    <div class="contact"><span style="font-size: 12px;">服务热线：<!--<a href="tel:963666">963666</a>、<a href="tel:963517">963517</a></span>--></div>
 </div>
 
 <!--<script id="index-template" type="text/x-dot-template">
@@ -112,34 +112,33 @@
 <script src="钢瓶档案_files/jquery.min.js"></script>
 <script src="钢瓶档案_files/doT.min.js" type="text/javascript"></script>
 <script>
-    $(function () {
-        //var id = getUrlParam('id');
-        var id = $("#bottleCode").val();
-        if (id) {
-            $.ajax({
-                type: "get",
-                url: "/msht/lpgBottle/getBottleInfoH5",
-                data: {
-                    bottleCode: id
-                },
-                dataType: "json",
-                success: function (res) {
-                    if (res.result == "success") {
-                        var data = res;
-                        var evalText = doT.template($("#index-template").text());
-                        $("#index").html(evalText(data));
-                    } else {
-                        alert(res.msg);
-                    }
-                }
-            });
-        }
-    });
+
+    var gasJarId = getUrlParam("gasJarId");
+    $("#gas-jar-id").text(gasJarId);
+    var gasJarCode = getUrlParam("gasJarCode");
+    $("#gas-jar-code").text(gasJarCode);
+    var productCompany = getUrlParam("productCompany");
+    console.log("productCompany："+productCompany)
+    $("#product-company").text(productCompany);
+    var productMan = getUrlParam("productMan");
+    $("#product-man").text(productMan);
+    var gasJarSpecification = getUrlParam("gasJarSpecification");
+    $("#gas-jar-specification").text(gasJarSpecification);
+    var productDate = getUrlParam("productDate");
+    $("#product-date").text(productDate);
+    var productNextChecked = getUrlParam("productNextChecked");
+    $("#product-next-checked").text(productNextChecked);
+    var fillCompany = getUrlParam("fillCompany");
+    $("#fill-company").text(fillCompany);
+    var fillDate =  getUrlParam("fillDate");
+    $("#fill-date").text(fillDate);
+    var totalWeight = getUrlParam("totalWeight");
+    $("#total-weight").text(totalWeight);
 
     function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
         var r = window.location.search.substr(1).match(reg);  //匹配目标参数
-        if (r != null) return unescape(r[2]);
+        if (r != null) return unescape(decodeURI(r[2]));
         return null; //返回参数值
     }
 </script>
