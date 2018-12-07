@@ -113,6 +113,7 @@
 <script src="钢瓶档案_files/doT.min.js" type="text/javascript"></script>
 <script>
 
+    var id = getUrlParam("i");
     var productCompany = getUrlParam("c");
     console.log("productCompany=="+productCompany);
     var pre = "8101";
@@ -135,8 +136,8 @@
         pre="8108";
         $("#product-company").text("详昌源气站");
     }
-    $("#gas-jar-id").text(pre+"00000"+productCompany);
-    $("#gas-jar-code").text("FK-"+pre+"00000"+productCompany);
+    $("#gas-jar-id").text(id);
+    $("#gas-jar-code").text("FK-"+id);
     var fillCompany = getUrlParam("fillCompany");
     $("#fill-company").text($("#product-company").text());
 
